@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python3 -u
+
 import time
 import os
 import difflib
@@ -58,8 +59,6 @@ class MQTTScriptClient(Client):
             time.sleep(600)
             self.scripts = self.get_scripts()
 
-
-
 def main():
     authentication = open('auth').read().splitlines()
     client = MQTTScriptClient(authentication, 'io.adafruit.com', 'scripts', 'topics')
@@ -68,3 +67,4 @@ def main():
     client.run_debug()
 
 main()
+

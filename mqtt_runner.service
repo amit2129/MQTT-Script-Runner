@@ -1,0 +1,15 @@
+[Unit]
+Description=MQTT Script Runner
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=amit
+ExecStart=/usr/bin/python3 /home/amit/git/ScriptRunner/mqtt_runner.py
+WorkingDirectory=/home/amit/git/ScriptRunner
+
+
+[Install]
+WantedBy=multi-user.target
+
